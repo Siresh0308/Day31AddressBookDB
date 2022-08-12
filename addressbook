@@ -26,3 +26,23 @@ Database changed
 mysql> /*****UC1 Create database addressbook*******/
 mysql> create database Address_Book;
 Query OK, 1 row affected (0.02 sec)
+
+mysql> /*******UC2 Adding Details to AddressBook*******/
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| address_book       |
+| addressbook        |
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use address_book;
+Database changed
+mysql> create table AddressBookDetails( FirstName varchar(255) , LastName varchar(255) , City varchar(255) , PhoneNumber int, PinCode int ,State varchar(255) , email varchar(255));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>
