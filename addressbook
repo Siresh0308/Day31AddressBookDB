@@ -45,4 +45,54 @@ Database changed
 mysql> create table AddressBookDetails( FirstName varchar(255) , LastName varchar(255) , City varchar(255) , PhoneNumber int, PinCode int ,State varchar(255) , email varchar(255));
 Query OK, 0 rows affected (0.06 sec)
 
+/**************UC3 inserting new Contacts to AddressBook table************/
+
+mysql>mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| address_book       |
+| addressbook        |
+| addressbookservice |
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use ^C
+mysql> use address_book;
+Database changed
+mysql> show address_book;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'address_book' at line 1
+mysql> desc AddressBookDetails;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| FirstName   | varchar(255) | YES  |     | NULL    |       |
+| LastName    | varchar(255) | YES  |     | NULL    |       |
+| City        | varchar(255) | YES  |     | NULL    |       |
+| PhoneNumber | int          | YES  |     | NULL    |       |
+| PinCode     | int          | YES  |     | NULL    |       |
+| State       | varchar(255) | YES  |     | NULL    |       |
+| email       | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+7 rows in set (0.01 sec)
+
+mysql> insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('Resh','Singh','Bhopal',919691674007,462023,'M.P.','abc@gmail.com');
+ERROR 1264 (22003): Out of range value for column 'PhoneNumber' at row 1
+mysql> insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('Resh','Singh','Bhopal',9691674007,462023,'M.P.','abc@gmail.com');
+ERROR 1264 (22003): Out of range value for column 'PhoneNumber' at row 1
+mysql> insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('Resh','Singh','Bhopal',96917,462023,'M.P.','abc@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>  insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('Reshma','Singh','Bhopal',9456917,462123,'M.P.','abec@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('Rashmi','Singh','Bhopal',94356917,462423,'M.P.','abef@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into AddressBookDetails(FirstName, LastName,City,PhoneNumber,PinCode, State,email) values('SuResh','Singh','Bhopal',94536917,462113,'M.P.','aefgh@gmail.com');
+Query OK, 1 row affected (0.01 sec)
+
 mysql>
