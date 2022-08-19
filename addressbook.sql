@@ -180,4 +180,41 @@ mysql> desc AddressBookDetails;
 
 mysql> delete from Addressbookdetails where lastname='singh';
 Query OK, 3 rows affected (0.05 sec)
+UC5 -deleting the contact by their lastname
 
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| address_book       |
+| addressbook        |
+| addressbookservice |
+| employeepayroll    |
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+7 rows in set (0.07 sec)
+
+mysql> use addressbookservice;
+Database changed
+mysql> select * from Addressbook;
+mysql> select * from AddressbookDetails;
+Database changed
+mysql> desc AddressBookDetails;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| FirstName   | varchar(255) | YES  |     | NULL    |       |
+| LastName    | varchar(255) | YES  |     | NULL    |       |
+| City        | varchar(255) | YES  |     | NULL    |       |
+| PhoneNumber | int          | YES  |     | NULL    |       |
+| PinCode     | int          | YES  |     | NULL    |       |
+| State       | varchar(255) | YES  |     | NULL    |       |
+| email       | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+7 rows in set (0.03 sec)
+
+mysql> delete from Addressbookdetails where lastname='singh';
+Query OK, 3 rows affected (0.05 sec)
